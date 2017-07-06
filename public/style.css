@@ -1,0 +1,165 @@
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  height: 100%;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  height: 100%;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media only screen and (max-width: 400px) {
+    /* For mobile phones: */
+  .topnav .icon:hover {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  
+}
+.container {
+  background-color: #5DF;
+}
+
+.landing-page {
+  background-color: #5DF;
+  
+  
+}
+.storemap-page {
+  margin: 0;
+  padding: 0;
+  background-color: #5DF;
+  height: 660px;
+
+}
+.footer {
+  background-color: #333;
+  color: #AAA;
+  height: 80px;
+  position: relative;
+}
+.timePage {
+  background-color: 'powderblue';
+  height: 280px;
+}
+.storesPage {
+  margin: 0;
+  padding: 0;
+  height: 370px;
+  background-color: #777;
+  overflow: scroll;
+}
+.dataPage {
+    background-color: #777;
+}
+.timer {
+  background-color: #FFF;
+  opacity: .8;
+  color: #000;
+  margin: auto;
+  position: relative;
+  top: -40vw;
+  font-size: 4em;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif
+}
+.logo {
+  font-size: 10vw;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  
+}
+.min {
+  background-color: #FFF;
+  width: 50px;
+}
+.sec {
+  background-color: #FFF;
+  width: 50px;
+}
+.tens {
+  background-color: #FFF;
+  width: 50px;
+
+}
+.mapDiv {
+  align-content: 'center';
+  align-items: 'center';
+}
+.mapDiv {
+  background:#FFF;
+  opacity: .9;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  font-size: 1.5em;
+  color: #222;
+  width: 300px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+.endData {
+  background-color: '#333';
+  height: 280px;
+}
+.endFeedback {
+  margin: 0;
+  padding: 0;
+  height: 370px;
+  background-color: #777;
+  overflow: scroll;
+}
+.storeButton {
+  width: 100%;
+}
+.searchBar {
+  margin-top: 1em;
+  width: 100%;
+  background-color: '#333';
+  display: inline-block;
+  text-align: center;
+}
+.sBar {
+  width: 80%;
+
+}
+.user-page {
+  background-color: #5DF; 
+}
+.user-image {
+  border-radius: 50%;
+}
+.form {
+  margin-top: 1em;
+}
