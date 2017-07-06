@@ -1,4 +1,4 @@
-const baseUrl = 'https://wait-time-api.herokuapp.com/api/v1'
+const baseUrl = 'https://wait-time-rails-api.herokuapp.com/api/v1/'
 
 export class AuthAdapter {
   static login(loginParams){
