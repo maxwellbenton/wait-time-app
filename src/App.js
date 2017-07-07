@@ -74,7 +74,7 @@ class App extends Component {
           } else {
             console.log(this.state.selectedStore)
             return  <div>
-                      <div className="landing-page"><TimePage timerStarted={this.state.timerStarted} timeInfo={this.state.startTime} handleClick={this.toggleTimer}/></div>
+                      <div className="landing-page"><TimePage timerStarted={this.state.timerStarted} timeInfo={this.state.startTime}/></div>
                       {this.checkForLogIn()}
                     </div>
           }

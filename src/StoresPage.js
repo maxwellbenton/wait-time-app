@@ -19,9 +19,9 @@ export default class StoresPage extends Component{
     
     renderStores() {
         if (this.props.timerStarted === 1) {
-            return <button key={this.props.selectedStore.id} className="storeButton"><Store store={this.props.selectedStore} handleClick={this.props.handleClick}/></button>
+            return <div key={this.props.selectedStore.id} className="storeButton"><Store store={this.props.selectedStore} handleClick={this.props.handleClick}/></div>
         } else {
-            return this.props.nearbyStores.map(store => <button key={store.id} className="storeButton" ><Store store={store} handleClick={this.props.handleClick}/></button>)
+            return this.props.nearbyStores.map(store => <div key={store.id} className="storeButton" ><Store store={store} handleClick={this.props.handleClick}/></div>)
         }
     }
 

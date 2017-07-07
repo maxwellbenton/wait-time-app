@@ -30,12 +30,13 @@ export default class StoresPage extends Component{
             <div>
                 <div>
                     {this.state.store !== null ? <Chart data={this.state.store} /> : "Loading Chart..."}
+                    <div className="endFeedback">
+                        {feedbackOptions.map((comment) => <button key={comment.id} className="storeButton" onClick={this.handleClick} style={{width:"100%", height: "40px"}}><div >{comment.content}</div></button> )}
+                    </div>
                 </div>
                 <div className="storesPage text-center">
                     <div className="endData"> Thank you!  Please choose a feedback option to submit your wait time.</div>
-                    <div className="endFeedback">
-                        {feedbackOptions.map((comment) => <button key={comment.id} onClick={this.handleClick}><div className="storeButton">{comment.content}</div></button> )}
-                    </div>
+                    
                     
                     
                 </div>

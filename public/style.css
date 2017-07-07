@@ -136,12 +136,13 @@ body, html {
 .endFeedback {
   margin: 0;
   padding: 0;
-  height: 370px;
+  height: 160px;
   background-color: #777;
   overflow: scroll;
 }
 .storeButton {
   width: 100%;
+  min-height: 40px;
 }
 .searchBar {
   margin-top: 1em;

@@ -37,7 +37,7 @@ class UserPage extends Component{
   }
   
   render() {
-    if(this.state.user) {
+    if(this.state.user === null) {
       UserAdapter.userData(localStorage.getItem("user_id"))
         .then(user => {
           this.setState({
