@@ -31,19 +31,19 @@ export default class StoresSearchContainer extends Component{
     }
 
     render(){
-        var storeList = this.state.stores.filter(store => store.name.includes(this.state.filter) || store.address.includes(this.state.filter)).map(store => <Link to={`stores/${store.id}`} key={store.id}><div key={store.id}>{store.name}</div><div>{store.address}</div></Link>)
+        var storeList = this.state.stores.filter(store => store.name.toUpperCase().includes(this.state.filter.toUpperCase()) || store.address.toUpperCase().includes(this.state.filter.toUpperCase())).map(store => <Link className="text-center" to={`stores/${store.id}`} key={store.id}><div className="storeResult" key={store.id}><div style={{fontSize: '4vh'}}>{store.name}</div><div style={{fontSize: '3vh'}}>{store.address}</div></div></Link>)
         return(
           <div>
             <Switch>
               <Route exact path='/stores' render={() => {
                 return  <div>
-                          <div className='row'>
-                            <form action="">
-                              <input type="text" placeholder="Search Stores" onChange={this.filterStores}/>
+                          <div className="storeSearch text-center">
+                            <form className="searchBar">
+                              <input className="sBar"type="text" placeholder="Search Stores" onChange={this.filterStores}/>
                             </form>
-                            <Link to='/stores/new'>Add Store</Link>
+                            <Link to='/stores/new'>Add New Store</Link>
                           </div>
-                          <div className='col-md-4'>
+                          <div className="storeListPage">
                             {storeList}
                           </div>
                         </div>

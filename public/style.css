@@ -1,6 +1,6 @@
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #00464D;
   height: 100%;
 }
 
@@ -8,7 +8,7 @@
   float: left;
   display: block;
   height: 100%;
-  color: #f2f2f2;
+  color: #E8FDFF;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -16,7 +16,7 @@
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #E8FDFF;
   color: black;
 }
 
@@ -56,75 +56,97 @@ body, html {
   
 }
 .container {
-  background-color: #5DF;
+  background-color: #8DF5FF;
+  padding: 0;
 }
 
 .landing-page {
-  background-color: #5DF;
-  
-  
-}
-.storemap-page {
+  background-color: #1BECFF;
   margin: 0;
-  padding: 0;
-  background-color: #5DF;
-  height: 660px;
-
-}
-.footer {
-  background-color: #333;
-  color: #AAA;
-  height: 80px;
-  position: relative;
+  height: 45vh;
 }
 .timePage {
-  background-color: 'powderblue';
-  height: 280px;
-}
-.storesPage {
-  margin: 0;
-  padding: 0;
-  height: 370px;
-  background-color: #777;
-  overflow: scroll;
-}
-.dataPage {
-    background-color: #777;
+  background-color: #1BECFF;
+  height: 45vh;
 }
 .timer {
-  background-color: #FFF;
+  background-color: #FFF3E8;
   opacity: .8;
   color: #000;
   margin: auto;
   position: relative;
-  top: -29vh;
-  font-size: 4em;
+  top: -28vh;
+  
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif
 }
 .logo {
+  margin: auto;
   font-size: 10vh;
-  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-  
+  overflow-x: hidden;
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;  
+}
+
+.storesPage {
+  margin: 0;
+  padding: 0;
+  height: 45vh;
+  background-color: #477B7F	;
+  overflow: scroll;
+}
+
+.storemap-page {
+  margin: 0;
+  padding: 0;
+  background-color: #1BECFF;
+  height: 90vh;
+
+}
+.footer {
+  background-color: #00464D;
+  color: #E8FDFF;
+  height: 80px;
+  position: relative;
+}
+.footer a:hover {
+  background-color: #8DF5FF;
+  color: #00464D;
+}
+
+.storeSearch {
+  margin: auto;
+}
+.storeListPage {
+    height: 90vh;
+    overflow: scroll;
+}
+.storeListPage a:hover {
+  color: #000;
+  text-decoration: none;
+}
+.storeResult {
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+
+.hours {
+  background-color: #FFF3E8;
+  width: 50px;
 }
 .min {
-  background-color: #FFF;
+  background-color: #FFF3E8;
   width: 50px;
 }
 .sec {
-  background-color: #FFF;
+  background-color: #FFF3E8;
   width: 50px;
 }
-.tens {
-  background-color: #FFF;
-  width: 50px;
 
-}
 .mapDiv {
   align-content: 'center';
   align-items: 'center';
 }
 .mapDiv {
-  background:#FFF;
+  background:#80ffff;
   opacity: .9;
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
   font-size: 1.5em;
@@ -136,22 +158,22 @@ body, html {
   vertical-align: middle;
 }
 .endData {
-  background-color: '#333';
+  background-color: #00464D;
   height: 280px;
 }
 .endFeedback {
   margin: 0;
   padding: 0;
   height: 160px;
-  background-color: #777;
+  background-color: #477b7f;
   overflow: scroll;
 }
 .storeButton {
   width: 100%;
   min-height: 40px;
   color:#444;
-  border:1px solid #CCC;
-  background:#eee;
+  border:1px solid #FFF3E8;
+  background:#E8FDFF;
   box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
   cursor:pointer;
   vertical-align:middle;
@@ -162,16 +184,16 @@ body, html {
 .searchBar {
   margin-top: 1em;
   width: 100%;
-  background-color: '#333';
+  background-color: #8DF5FF;
   display: inline-block;
   text-align: center;
 }
 .sBar {
   width: 80%;
-
+  font-size: 4vh;
 }
 .user-page {
-  background-color: #5DF; 
+  background-color: #8DF5FF; 
 }
 .user-image {
   border-radius: 50%;
@@ -186,7 +208,7 @@ body, html {
 .loadingAnimation {
   margin: 0 auto;
   position: absolute;
-  left: 45vw;
+  left: 43vw;
   top: 50vh;
   background: url(/animated-clock.gif) no-repeat ;
   height: 10vh;

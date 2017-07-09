@@ -33,3 +33,4 @@ export default class StandardTime extends Component {
         </div>
     )
 }
+}
