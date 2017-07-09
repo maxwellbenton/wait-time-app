@@ -13,8 +13,8 @@ class UserPage extends Component{
   }
 
   totalWait() {
-    if(this.state.user !== null) {
-      let total = this.state.user.wait_times.reduce((acc, wt) => acc + wt.wait_time, 0)
+    if(this.props.user !== null) {
+      let total = this.props.user.wait_times.reduce((acc, wt) => acc + wt.wait_time, 0)
       return total/1000
     }
   }
@@ -27,9 +27,9 @@ class UserPage extends Component{
   }
 
   displayChart() {
-      if(this.state.user.wait_times.length > 0) {
+      if(this.props.user.wait_times.length > 0) {
           return(
-              <Chart data={this.state.user}/>
+              <Chart data={this.props.user}/>
           )
       } else {
           return "No data available"
@@ -37,7 +37,8 @@ class UserPage extends Component{
   }
   
   render() {
-    if(this.state.user === null) {
+  
+    if(this.props.user === null) {
       UserAdapter.userData(localStorage.getItem("user_id"))
         .then(user => {
           this.setState({
@@ -50,11 +51,11 @@ class UserPage extends Component{
     return (
       <div>
         <div className="text-center"><img className="img-circle" src={`/photos/${Math.floor(Math.random() * (11 - 1)) + 1}.jpg`} alt="user-time"/></div>
-        <h3 className="text-center">{this.state.user !== null ? this.state.user.username : null}</h3>
-        <div>{this.state.user !== null ? <Chart data={this.state.user} />  : null}</div>
-        <div>Lines Timed: {this.state.user !== null ? this.state.user.wait_times.length  : null}</div>
+        <h3 className="text-center">{this.props.user !== null ? this.props.user.username : null}</h3>
+        <div>{this.props.user !== null ? <Chart data={this.props.user} />  : null}</div>
+        <div>Lines Timed: {this.props.user !== null ? this.props.user.wait_times.length  : null}</div>
         <div>Total Time Spent in Line: {this.totalWait()} seconds</div>
-        <div>User since {this.state.user !== null ? this.state.user.created_at.split('T')[0] : null}</div>
+        <div>User since {this.props.user !== null ? this.props.user.created_at.split('T')[0] : null}</div>
         
         <button onClick={this.props.onLogout}>Log Out</button>
       </div>

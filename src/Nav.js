@@ -16,7 +16,6 @@ export default class NavBar extends Component {
       }
   }
 render() {
-  console.log(this.props)
   return (
     <nav className='topnav' ref={"navBtn"}>
       <div className='container-fluid text-center'>
@@ -26,7 +25,7 @@ render() {
           
           <Link to="/map"><img height="30" className="img-fluid" src="../maps-icon.png" alt="map icon"/></Link>
           <Link to="/stores"><img height="30" className="img-fluid" src="../search-icon.png" alt="map icon"/></Link>
-          {this.props.logInInfo.loggedIn ? <Link to={`/user/${this.props.logInInfo.user.id}`}>{this.props.logInInfo.user.username}</Link> : <Link to="/login">Log In</Link>}
+          {this.props.logInInfo.loggedIn ? <Link to={`/user/${this.props.logInInfo.user.id}`}><img height="30" className="img-fluid" src="../user-icon.png" alt="map icon"/><span className="userName">{this.props.logInInfo.user.username}</span></Link> : <Link to="/login">Log In</Link>}
           <a className="icon" onClick={this.navFunction}>&#9776;</a>
         </div>
         

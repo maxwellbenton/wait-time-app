@@ -34,8 +34,9 @@ class App extends Component {
       mapWidth: 375,
       searchTerm: "",
       storeDetail: null,
+      pageLoading: true,
       auth: {
-        loggedIn: false,
+        loggedIn: null,
         user: null
       }
       
@@ -54,30 +55,40 @@ class App extends Component {
     this.submitFeedback = this.submitFeedback.bind(this)
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getCurrentUser()
   }
 
   render() {
     console.log(this.state.curLat)
     console.log(this.state.curLong)
-    console.log(this.state.user)
+    console.log(this.state.auth.user)
     return (
       <div className="App container">
         <Nav handleClick={this.resetTimeStatus} logInInfo={this.state.auth}/>
         <Route exact path="/" render={() => {
-          if(this.state.timerStarted === 2) {
-            console.log(this.state.selectedStore)
-            return <div className="ending-page">
-                    <EndTime store={this.state.selectedStore} handleClick={this.submitFeedback}/>
-                  </div>
-          } else {
-            console.log(this.state.selectedStore)
-            return  <div>
-                      <div className="landing-page"><TimePage timerStarted={this.state.timerStarted} timeInfo={this.state.startTime}/></div>
-                      {this.checkForLogIn()}
+          if(this.state.pageLoading) {
+            return  <div className="loadingScreen text-center">
+                      <div className="loadingAnimation mx-auto d-block">
+                        <div className="loadingText">
+                          Loading...
+                        </div>
+                      </div>
                     </div>
-          }
+          } else {
+            if(this.state.timerStarted === 2) {
+              console.log(this.state.selectedStore)
+              return <div className="ending-page">
+                      <EndTime store={this.state.selectedStore} handleClick={this.submitFeedback}/>
+                    </div>
+            } else {
+              console.log("timer not activated")
+              return  <div>
+                        <div className="landing-page"><TimePage timerStarted={this.state.timerStarted} timeInfo={this.state.startTime}/></div>
+                        {this.checkForLogIn()}
+                      </div>
+            }
+          }  
         }} />
         <Route exact path="/map" render={() => {
           return  <div className="storemap-page">
@@ -89,7 +100,6 @@ class App extends Component {
                     <StoreSearchContainer getLoc={this.getUserLocation} curState={this.state} onChange={this.handleSearch}/>
                   </div>
         }} />
-        
         <Route exact path="/about" render={() => {
           return  <div className="about-page">
                     <About />
@@ -107,7 +117,7 @@ class App extends Component {
         }} />
         <Route exact path="/user/:id" render={() => {
           return  <div className="user-page">
-                    <UserPage onLogout={this.logOut}/>
+                    <UserPage user={this.state.auth.user} onLogout={this.logOut}/>
                   </div>
         }} />
         <div className="footer">
@@ -121,7 +131,9 @@ class App extends Component {
   }
 
   getCurrentUser() {
-    if(localStorage.getItem("user_id")) {
+    if(localStorage.getItem('user_id') === undefined) {
+      this.props.history.push('/login')
+    } else {
       AuthAdapter.currentUser(localStorage.getItem("user_id"))
       .then(user => {
         this.setState({
@@ -131,15 +143,7 @@ class App extends Component {
           }
         })
       })
-    } else {
-      this.setState({
-          auth: {
-            loggedIn: false,
-            user: null
-          }
-        })
-      this.props.history.push('/login')
-    }
+    } 
     this.getUserLocation()
   }
 
@@ -163,14 +167,16 @@ class App extends Component {
               curLat: lat,
               curLong: lng,
               error: null,
-              nearbyStores: data
+              nearbyStores: data,
+              pageLoading: false
             })
           } else {
             this.setState({
               latitude: lat, 
               longitude: lng,
               error: null,
-              nearbyStores: data
+              nearbyStores: data,
+              pageLoading: false
             })
           }
         })
@@ -211,6 +217,7 @@ class App extends Component {
       .then(console.log)
       .then(this.resetTimeStatus())
   }
+
   resetTimeStatus() {
     this.setState({
       timerStarted: 0,
@@ -228,8 +235,10 @@ class App extends Component {
   checkForLogIn() {
     if(this.state.auth.loggedIn) {
       return <div className="storesPage"><StoresPage initialPosition={{lat:this.state.curLat,long:this.state.curLong}} nearbyStores={this.state.nearbyStores} selectedStore={this.state.selectedStore} timerStarted={this.state.timerStarted} handleClick={this.toggleTimer} /></div>
-    } else {
+    } else if (!this.state.auth.loggedIn){
       return <div className="landing-page"><Login onSubmit={this.logIn} onUserCreate={this.createUser}/></div>
+    } else {
+      return <div><img height="30" className="img-fluid" src="../pocket_watch_sm.png" alt="watch icon"/></div>
     }
   }
 
@@ -239,11 +248,14 @@ class App extends Component {
       this.setState({
         auth: {
           loggedIn: true,
-          user: user
+          user: user,
+          pageLoading: false
         }
       })
       localStorage.setItem("user_id", user.id)
+
     })
+    .then(this.props.history.push('/login'))
   }
 
   logOut() {
