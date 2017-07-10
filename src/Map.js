@@ -16,6 +16,11 @@ export default class Map extends Component {
     super()
     this.handleChange = this.handleChange.bind(this)
   }
+  componentWillMount() {
+    if(this.props.curState.latitude === null) {
+      this.props.getUserLocation()
+    }
+  }
   handleChange(e) {
     this.props.mapChange(e.center.lat, e.center.lng)
   }
@@ -27,27 +32,23 @@ export default class Map extends Component {
               lng={store.longitude}
             />
     })
-    console.log(markers)
-    console.log(this.props.curState)
-    if(this.props.curState.latitude === null) {
-      this.props.getUserLocation()
-    }
+    
     return (
       <div style={{width: '100%', height: '100%'}}>
-      <GoogleMap
-        bootstrapURLKeys={{
-          key: "AIzaSyAHr8Z1lo-CaTqSk7jyuP2Zl66LVpDsz_M",
-          language: 'en'
-          }}
-        center={[this.props.curState.latitude,this.props.curState.longitude]}
-        zoom={17}
-        margin={[K_MARGIN_TOP, K_MARGIN_RIGHT, K_MARGIN_BOTTOM, K_MARGIN_LEFT]}
-        hoverDistance={K_HOVER_DISTANCE}
-        options={this.createMapOptions}
-        onChange={this.handleChange}
-      >
-       {markers}
-      </GoogleMap>       
+        <GoogleMap
+          bootstrapURLKeys={{
+            key: "AIzaSyAHr8Z1lo-CaTqSk7jyuP2Zl66LVpDsz_M",
+            language: 'en'
+            }}
+          center={[this.props.curState.latitude,this.props.curState.longitude]}
+          zoom={17}
+          margin={[K_MARGIN_TOP, K_MARGIN_RIGHT, K_MARGIN_BOTTOM, K_MARGIN_LEFT]}
+          hoverDistance={K_HOVER_DISTANCE}
+          options={this.createMapOptions}
+          onChange={this.handleChange}
+        >
+          {markers}
+        </GoogleMap>       
       </div>
     )
   }

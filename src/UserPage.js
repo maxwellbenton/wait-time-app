@@ -1,13 +1,15 @@
 import React, {Component} from 'react'
 import {UserAdapter} from './adapters/'
 import Chart from './Chart'
+import LoadingScreen from './LoadingScreen'
 import { withRouter } from 'react-router-dom'
 
 class UserPage extends Component{
   constructor() {
     super()
     this.state = {
-      user: null
+      user: null,
+      loading: true
     }
     this.totalWait = this.totalWait.bind(this)
   }
@@ -20,10 +22,14 @@ class UserPage extends Component{
   }
 
   componentWillMount() {
-
-    if(localStorage.getItem("user_id") === null) {
-      this.props.history.push('/login')
+    if(localStorage.getItem("user_id") === null || localStorage.getItem("user_id") === 'undefined'|| this.props.user === null || this.props.user === 'undefined') {
+      this.props.history.push('/')
+    } else {
+      this.setState({
+      loading: false
+    })
     }
+    
   }
 
   displayChart() {
@@ -37,29 +43,24 @@ class UserPage extends Component{
   }
   
   render() {
-  
-    if(this.props.user === null) {
-      UserAdapter.userData(localStorage.getItem("user_id"))
-        .then(user => {
-          this.setState({
-            user: user
-          })
-        })
+    if(this.state.loading) {
+      return <LoadingScreen />
+    } else {
+
+      return (
+        <div>
+          <div className="text-center"><img className="img-circle" src={`/photos/${Math.floor(Math.random() * (11 - 1)) + 1}.jpg`} alt="user-time"/></div>
+          <h3 className="text-center">{this.props.user.username}</h3>
+          <div><Chart data={this.props.user} /></div>
+          <div>Lines Timed: {this.props.user.wait_times.length > 0 ? this.props.user.wait_times.length : 'No lines have been timed by this user'}</div>
+          <div>Total Time Spent in Line: {this.totalWait()} seconds</div>
+          <div>User since {this.props.user.created_at.split('T')[0]}</div>
+          
+          <button onClick={this.props.onLogout}>Log Out</button>
+        </div>
+      )
     }
     
-    
-    return (
-      <div>
-        <div className="text-center"><img className="img-circle" src={`/photos/${Math.floor(Math.random() * (11 - 1)) + 1}.jpg`} alt="user-time"/></div>
-        <h3 className="text-center">{this.props.user !== null ? this.props.user.username : null}</h3>
-        <div>{this.props.user !== null ? <Chart data={this.props.user} />  : null}</div>
-        <div>Lines Timed: {this.props.user !== null ? this.props.user.wait_times.length  : null}</div>
-        <div>Total Time Spent in Line: {this.totalWait()} seconds</div>
-        <div>User since {this.props.user !== null ? this.props.user.created_at.split('T')[0] : null}</div>
-        
-        <button onClick={this.props.onLogout}>Log Out</button>
-      </div>
-    )
   }
   
 }

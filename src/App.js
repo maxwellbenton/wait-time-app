@@ -12,6 +12,7 @@ import About from './About'
 import Contact from './Contact'
 import Login from './Login'
 import UserPage from './UserPage'
+import LoadingScren from './LoadingScreen'
 
 import {StoresAdapter, AuthAdapter, UserAdapter, FeedbackAdapter} from './adapters/'
 
@@ -60,21 +61,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.curLat)
-    console.log(this.state.curLong)
-    console.log(this.state.auth.user)
     return (
       <div className="App container">
         <Nav handleClick={this.resetTimeStatus} logInInfo={this.state.auth}/>
         <Route exact path="/" render={() => {
           if(this.state.pageLoading) {
-            return  <div className="loadingScreen text-center">
-                      <div className="loadingAnimation mx-auto d-block">
-                        <div className="loadingText">
-                          Loading...
-                        </div>
-                      </div>
-                    </div>
+            return  <LoadingScren />
           } else {
             if(this.state.timerStarted === 2) {
               console.log(this.state.selectedStore)
@@ -131,11 +123,12 @@ class App extends Component {
   }
 
   getCurrentUser() {
-    if(localStorage.getItem('user_id') === undefined) {
+    if(localStorage.getItem('user_id') === 'undefined' || localStorage.getItem("user_id") === null) {
       this.props.history.push('/login')
     } else {
-      AuthAdapter.currentUser(localStorage.getItem("user_id"))
+      AuthAdapter.currentUser()
       .then(user => {
+        
         this.setState({
           auth: {
             loggedIn: true,
@@ -143,8 +136,8 @@ class App extends Component {
           }
         })
       })
-    } 
-    this.getUserLocation()
+      .then(this.getUserLocation())
+    }  
   }
 
   getUserLocation() {
@@ -205,7 +198,7 @@ class App extends Component {
             startTime: null,
             waitTime: waitTime
           })
-      //this.getNearbyStores(this.state.latitude, this.state.longitude) 
+     
   }
   
   changeMap(lat, lng) {
@@ -255,7 +248,7 @@ class App extends Component {
       localStorage.setItem("user_id", user.id)
 
     })
-    .then(this.props.history.push('/login'))
+    
   }
 
   logOut() {

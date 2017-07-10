@@ -8,14 +8,11 @@ export class AuthAdapter {
       body: JSON.stringify(loginParams)
     }).then(res => res.json() )
   }
-
-  static currentUser(id){
+  static currentUser(){
     return fetch(`${baseUrl}/current_user`, {
         headers: headers(),
     }).then(res => res.json() )
-  }
-
-  
+  }  
 }
 
 export class UserAdapter {
