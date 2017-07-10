@@ -38,26 +38,25 @@ class StoreForm extends Component {
   render(){
     console.log(this.props)
     return (
-      <form onSubmit={this.handleSubmit}>
-        <table>
-          <tr>
-            <td><label>Store Name</label></td>
-            <td><input type='text' value={this.state.storeName} name="storeName" onChange={this.handleChange}/></td>
-          </tr>
-          <tr>
-            <td><label>Address</label></td>
-            <td><input type='text' value={this.state.address} name="address" onChange={this.handleChange}/></td>
-          </tr>
-          <tr>
-            <td><label>Company</label></td>
-            <td><input type='text' value={this.state.company} name="company" onChange={this.handleChange}/></td>
-          </tr>
-          <tr>
-            <td><input type="submit" /></td>
-          </tr>
-        </table>
-        
-      </form>
+      <div className="store-form">
+        <form  className="store-form" onSubmit={this.handleSubmit}>
+          
+            
+              <div className="text-center"><input type='text' className="form-input"placeholder="Store Name" value={this.state.storeName} name="storeName" onChange={this.handleChange}/></div>
+            
+            
+              <div className="text-center"><input type='text' className="form-input"placeholder="Address" value={this.state.address} name="address" onChange={this.handleChange}/></div>
+            
+            
+              <div className="text-center"><input type='text' className="form-input"placeholder="Company" value={this.state.company} name="company" onChange={this.handleChange}/></div>
+            
+            
+              <div className="text-center store-form"><input type="submit" /></div>
+            
+          
+          
+        </form>
+      </div>
     )
   }
 }

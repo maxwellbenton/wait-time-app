@@ -15,24 +15,44 @@ export default class Map extends Component {
   constructor() {
     super()
     this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      toggledStores: null
+    }
   }
   componentWillMount() {
     if(this.props.curState.latitude === null) {
       this.props.getUserLocation()
     }
+    this.setState({
+      toggledStores: this.props.nearbyStores.map(store => {
+        store.toggle = false;
+        return store
+      })
+    })
   }
+
   handleChange(e) {
     this.props.mapChange(e.center.lat, e.center.lng)
   }
 
+  checkForDuplicateLocations() {
+    for(let m = 0; m < this.props.nearbyStores.length-1; m++) {
+      console.log('----')
+      console.log(this.props.nearbyStores[m])
+      console.log(this.props.nearbyStores[m+1])
+    }
+    
+  }
   render() {
     var markers = this.props.nearbyStores.map(store => {
-      return <MiniStoreComponent key={store.id} store={store}
+      store.toggle = false;
+      return <MiniStoreComponent key={store.id} store={store} toggle={{id: store.id, opened: false}}
               lat={store.latitude}
               lng={store.longitude}
             />
     })
-    
+    console.log(this.props.nearbyStores)
+    //this.checkForDuplicateLocations()
     return (
       <div style={{width: '100%', height: '100%'}}>
         <GoogleMap

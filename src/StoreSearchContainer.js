@@ -24,6 +24,12 @@ export default class StoresSearchContainer extends Component{
     componentDidMount(){
         this.getStores()
     }
+    componentWillUnmount() {
+      this.setState({
+        filter: ""
+      })
+      
+    }
 
     getStores() {
       StoresAdapter.all()
@@ -31,7 +37,7 @@ export default class StoresSearchContainer extends Component{
     }
 
     render(){
-        var storeList = this.state.stores.filter(store => store.name.toUpperCase().includes(this.state.filter.toUpperCase()) || store.address.toUpperCase().includes(this.state.filter.toUpperCase())).map(store => <Link className="text-center" to={`stores/${store.id}`} key={store.id}><div className="storeResult" key={store.id}><div style={{fontSize: '4vh'}}>{store.name}</div><div style={{fontSize: '3vh'}}>{store.address}</div></div></Link>)
+        var storeList = this.state.stores.filter(store => store.name.toUpperCase().includes(this.state.filter.toUpperCase()) || store.address.toUpperCase().includes(this.state.filter.toUpperCase())).map(store => <Link className="text-center" to={`stores/${store.id}`} key={store.id}><div className="storeResult" key={store.id}><div style={{fontSize: '27px', }}>{store.name}</div><div style={{fontSize: '18px'}}>{store.address}</div></div></Link>)
         return(
           <div>
             <Switch>

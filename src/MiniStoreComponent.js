@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function StudentsList(props){
+    
     var est = (props.store.estimated_wait_time.map(wt => wt.wait_time).reduce((a,b) => a + b,0))/props.store.estimated_wait_time.length
   return(
     <div className="mapDiv">
