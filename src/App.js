@@ -108,9 +108,11 @@ class App extends Component {
                   </div>
         }} />
         <Route exact path="/user/:id" render={() => {
+          
           return  <div className="user-page">
                     <UserPage user={this.state.auth.user} onLogout={this.logOut}/>
                   </div>
+                  
         }} />
         <div className="footer">
           <Footer />
