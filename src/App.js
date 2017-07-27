@@ -128,7 +128,7 @@ class App extends Component {
     if(localStorage.getItem('user_id') === 'undefined' || localStorage.getItem("user_id") === null) {
       this.props.history.push('/login')
     } else {
-      fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/current_user`, {
+      fetch(`http://localhost:3000/api/v1/current_user`, {
           headers : { 
           'Content-Type': 'application/json',
           'Accept': 'application/json',
@@ -157,7 +157,7 @@ class App extends Component {
   }  
 
   getNearbyStores(lat, lng) {
-    fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/searchStores`, {
+    fetch(`http://localhost:3000/api/v1/searchStores`, {
         method: 'POST',
         headers : { 
         'Content-Type': 'application/json',
