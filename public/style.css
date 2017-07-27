@@ -201,6 +201,7 @@ body, html {
 .user-page {
   background-color: #8DF5FF; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 }
 .user-image {
@@ -209,6 +210,11 @@ body, html {
 .store-form {
   margin: 1em;
 =======
+=======
+}
+.user-image {
+  border-radius: 50%;
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 }
 .user-image {
   border-radius: 50%;
@@ -224,9 +230,13 @@ body, html {
 
 .loadingScreen {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   height: 600px;
 
+=======
+  height: 600px;
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
   height: 600px;
 >>>>>>> parent of 95d5ea9... fixed up CSS more
