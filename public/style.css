@@ -202,6 +202,7 @@ body, html {
   background-color: #8DF5FF; 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   height: 92vh;
   padding: 1em;
 =======
@@ -213,6 +214,11 @@ body, html {
 .store-form {
   margin: 1em;
 =======
+=======
+}
+.user-image {
+  border-radius: 50%;
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 }
 .user-image {
   border-radius: 50%;
@@ -226,7 +232,11 @@ body, html {
 .loadingScreen {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   height: 92vh;
+=======
+  height: 600px;
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
   height: 600px;
 >>>>>>> parent of 95d5ea9... fixed up CSS more
