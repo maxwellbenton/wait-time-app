@@ -9,7 +9,6 @@ export class AuthAdapter {
     }).then(res => res.json() )
   }
 
-
   static currentUser(id){
     return fetch(`${baseUrl}/current_user`, {
         headers: headers(),
