@@ -1,4 +1,4 @@
-const baseUrl = 'https://wait-time-rails-api.herokuapp.com/api/v1'
+const baseUrl = 'https://wait-time-rails-api.herokuapp.com/api/v1/'
 
 export class AuthAdapter {
   static login(loginParams){
@@ -10,11 +10,8 @@ export class AuthAdapter {
   }
   static currentUser(){
     console.log(`${baseUrl}/current_user`)
-    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/current_user`, {
-        headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       },
+    return fetch(`${baseUrl}/current_user`, {
+        headers: headers(),
     }).then(res => res.json() )
   }  
 }
@@ -88,13 +85,9 @@ export class StoresAdapter  {
       .then(response => response.json() )
   }
   static getLocalStores(lat, lng){
-    console.log(`${baseUrl}/searchStores`)
-    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/searchStores`, {
+    return fetch(`${baseUrl}/searchStores`, {
         method: 'POST',
-        headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       },
+        headers: headers(),
         body: JSON.stringify({
             location: {
                 latitude: lat,
@@ -158,6 +151,7 @@ export class FeedbackAdapter  {
 function headers() {
     return {
         'content-type': 'application/json',
-        'accept': 'application/json'
+        'accept': 'application/json',
+        'Authorization': localStorage.getItem('user_id')
     }
 }

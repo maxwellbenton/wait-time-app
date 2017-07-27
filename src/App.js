@@ -128,7 +128,13 @@ class App extends Component {
     if(localStorage.getItem('user_id') === 'undefined' || localStorage.getItem("user_id") === null) {
       this.props.history.push('/login')
     } else {
-      AuthAdapter.currentUser()
+      fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/current_user`, {
+          headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': localStorage.getItem('user_id')
+        },
+      }).then(res => res.json() )
       .then(user => {
         this.setState({
           auth: {
@@ -151,7 +157,20 @@ class App extends Component {
   }  
 
   getNearbyStores(lat, lng) {
-    StoresAdapter.getLocalStores(lat, lng)
+    fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/searchStores`, {
+        method: 'POST',
+        headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       },
+        body: JSON.stringify({
+            location: {
+                latitude: lat,
+                longitude: lng
+            }
+        })
+    })
+        .then(response => response.json() )
         .then(data => {
           if (this.state.curLat === null) {
             this.setState({
