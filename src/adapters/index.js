@@ -8,6 +8,7 @@ export class AuthAdapter {
       body: JSON.stringify(loginParams)
     }).then(res => res.json() )
   }
+  
   static currentUser(){
     console.log(`${baseUrl}/current_user`)
     return fetch(`${baseUrl}/current_user`, {
