@@ -200,39 +200,16 @@ body, html {
 }
 .user-page {
   background-color: #8DF5FF; 
-
-
 }
 .user-image {
   border-radius: 50%;
-}
-.store-form {
-  margin: 1em;
 }
 .form-input {
   width: 60vw;
 }
 
 .loadingScreen {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
   height: 600px;
-
-=======
-  height: 600px;
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
-  height: 600px;
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
-  height: 600px;
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
-  height: 600px;
->>>>>>> parent of 95d5ea9... fixed up CSS more
 }
 .loadingAnimation {
   margin: 0 auto;
