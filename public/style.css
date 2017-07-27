@@ -138,15 +138,15 @@ body, html {
 
 .hours {
   background-color: #FFF3E8;
-  width: 10vh;
+  width: 50px;
 }
 .min {
   background-color: #FFF3E8;
-  width: 10vh;
+  width: 50px;
 }
 .sec {
   background-color: #FFF3E8;
-  width: 10vh;
+  width: 50px;
 }
 
 .mapDiv {
@@ -165,12 +165,12 @@ body, html {
 }
 .endData {
   background-color: #00464D;
-  height: 20vh;
+  height: 280px;
 }
 .endFeedback {
   margin: 0;
   padding: 0;
-  height: 40vh;
+  height: 160px;
   background-color: #477b7f;
   overflow: scroll;
 }
@@ -200,12 +200,14 @@ body, html {
 }
 .user-page {
   background-color: #8DF5FF; 
+<<<<<<< HEAD
   height: 92vh;
   padding: 1em;
+=======
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 }
 .user-image {
   border-radius: 50%;
-  margin: 1em;
 }
 .store-form {
   margin: 1em;
@@ -216,7 +218,11 @@ body, html {
 }
 
 .loadingScreen {
+<<<<<<< HEAD
   height: 92vh;
+=======
+  height: 600px;
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 }
 .loadingAnimation {
   margin: 0 auto;
@@ -230,7 +236,4 @@ body, html {
   position: relative;
   top: 50px;
   left: 0;
-}
-.img-circle {
-  margin: 1em;
 }
