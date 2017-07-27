@@ -130,7 +130,6 @@ class App extends Component {
     } else {
       AuthAdapter.currentUser()
       .then(user => {
-        
         this.setState({
           auth: {
             loggedIn: true,
@@ -147,8 +146,7 @@ class App extends Component {
       (position) => {
         this.getNearbyStores(position.coords.latitude,position.coords.longitude) 
       },
-      (error) => this.setState({ error: error.message }),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
+      (error) => this.setState({ error: error.message })
     );
   }  
 
