@@ -9,9 +9,14 @@ export class AuthAdapter {
     }).then(res => res.json() )
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   static currentUser(){
     console.log(`${baseUrl}/current_user`)
+=======
+
+  static currentUser(id){
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
 
   static currentUser(id){

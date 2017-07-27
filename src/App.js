@@ -137,16 +137,7 @@ class App extends Component {
       this.props.history.push('/login')
     } else {
 
-      fetch(`http://localhost:3000/api/v1/current_user`, {
-          headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': localStorage.getItem('user_id')
-        },
-      }).then(res => res.json() )
-
       AuthAdapter.currentUser(localStorage.getItem("user_id"))
-
       .then(user => {
         this.setState({
           auth: {

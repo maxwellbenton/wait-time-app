@@ -20,6 +20,7 @@ export default class Map extends Component {
     }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   componentWillMount() {
     if(this.props.curState.latitude === null) {
       this.props.getUserLocation()
@@ -32,6 +33,8 @@ export default class Map extends Component {
     })
   }
 
+=======
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
   handleChange(e) {
@@ -55,14 +58,20 @@ export default class Map extends Component {
             />
     })
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(this.props.nearbyStores)
     //this.checkForDuplicateLocations()
 =======
+=======
+>>>>>>> parent of 95d5ea9... fixed up CSS more
     console.log(markers)
     console.log(this.props.curState)
     if(this.props.curState.latitude === null) {
       this.props.getUserLocation()
     }
+<<<<<<< HEAD
+>>>>>>> parent of 95d5ea9... fixed up CSS more
+=======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
     return (
       <div style={{width: '100%', height: '100%'}}>
