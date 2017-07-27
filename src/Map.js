@@ -15,11 +15,7 @@ export default class Map extends Component {
   constructor() {
     super()
     this.handleChange = this.handleChange.bind(this)
-    this.state = {
-      toggledStores: null
-    }
   }
-
   handleChange(e) {
     this.props.mapChange(e.center.lat, e.center.lng)
   }
@@ -40,52 +36,12 @@ export default class Map extends Component {
               lng={store.longitude}
             />
     })
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    console.log(this.props.nearbyStores)
-    //this.checkForDuplicateLocations()
-=======
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
+
     console.log(markers)
     console.log(this.props.curState)
     if(this.props.curState.latitude === null) {
       this.props.getUserLocation()
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
     return (
       <div style={{width: '100%', height: '100%'}}>
       <GoogleMap
