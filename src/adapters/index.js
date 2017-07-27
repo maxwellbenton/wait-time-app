@@ -15,6 +15,7 @@ export class AuthAdapter {
   }  
 }
 
+
 export class UserAdapter {
   static userData(userParams){
     return fetch(`${baseUrl}/user_data`, {
