@@ -1,24 +1,24 @@
-const baseUrl = 'http://localhost:3000/api/v1/'
+const baseUrl = 'https://wait-time-rails-api.herokuapp.com/api/v1'
 
 export class AuthAdapter {
   static login(loginParams){
-    return fetch(`${baseURL}auth`, {
+    return fetch(`${baseUrl}/auth`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify(loginParams)
     }).then(res => res.json() )
   }
   static currentUser(){
-    return fetch(`${baseUrl}current_user`, {
+    console.log(`${baseUrl}/current_user`)
+    return fetch(`${baseUrl}/current_user`, {
         headers: headers(),
     }).then(res => res.json() )
   }  
 }
 
-
 export class UserAdapter {
   static userData(userParams){
-    return fetch(`${baseUrl}user_data`, {
+    return fetch(`${baseUrl}/user_data`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify(userParams)
@@ -26,7 +26,7 @@ export class UserAdapter {
   }
 
   static createUser(username, password){
-    return fetch(`${baseUrl}create_user`, {
+    return fetch(`${baseUrl}/create_user`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -43,14 +43,14 @@ export class UserAdapter {
 
 export class WaitTimesAdapter  {
   static all(){
-    return fetch(`${baseUrl}wait_times`, {
+    return fetch(`${baseUrl}/wait_times`, {
       headers: headers()
     })
       .then( res => res.json() )
   }
 
   static create(waitTime, selectedStore, user_id){
-    return fetch(`${baseUrl}wait_times`, {
+    return fetch(`${baseUrl}/wait_times`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -68,12 +68,12 @@ export class WaitTimesAdapter  {
 
 export class StoresAdapter  {
   static all(){
-    return fetch(`${baseUrl}all`)
+    return fetch(`${baseUrl}/all`)
       .then(response => response.json() )
   }
 
   static show(id){
-    return fetch(`${baseUrl}show`, {
+    return fetch(`${baseUrl}/show`, {
         method: 'POST',
         headers: headers(),
         body: JSON.stringify({
@@ -85,7 +85,8 @@ export class StoresAdapter  {
       .then(response => response.json() )
   }
   static getLocalStores(lat, lng){
-    return fetch(`${baseUrl}searchStores`, {
+    console.log(`${baseUrl}/searchStores`)
+    return fetch(`${baseUrl}/searchStores`, {
         method: 'POST',
         headers: headers(),
         body: JSON.stringify({
@@ -99,7 +100,7 @@ export class StoresAdapter  {
   }
 
   static wideSearch(lat, lng){
-    return fetch(`${baseUrl}wideSearchStores`, {
+    return fetch(`${baseUrl}/wideSearchStores`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -113,7 +114,7 @@ export class StoresAdapter  {
   }
 
   static createStore(storeName, address, company){
-    return fetch(`${baseUrl}createStore`, {
+    return fetch(`${baseUrl}/createStore`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -132,7 +133,7 @@ export class FeedbackAdapter  {
   
 
   static create(feedback, store_id, user_id, wait_time){
-    return fetch(`${baseUrl}create_feedback`, {
+    return fetch(`${baseUrl}/create_feedback`, {
         method: 'POST',
         headers: headers(),
         body: JSON.stringify({
