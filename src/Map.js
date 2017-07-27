@@ -19,36 +19,7 @@ export default class Map extends Component {
       toggledStores: null
     }
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  componentWillMount() {
-    if(this.props.curState.latitude === null) {
-      this.props.getUserLocation()
-    }
-    this.setState({
-      toggledStores: this.props.nearbyStores.map(store => {
-        store.toggle = false;
-        return store
-      })
-    })
-  }
 
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
   handleChange(e) {
     this.props.mapChange(e.center.lat, e.center.lng)
   }
@@ -75,9 +46,12 @@ export default class Map extends Component {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(this.props.nearbyStores)
     //this.checkForDuplicateLocations()
 =======
+=======
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
@@ -98,6 +72,9 @@ export default class Map extends Component {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 95d5ea9... fixed up CSS more
+=======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
