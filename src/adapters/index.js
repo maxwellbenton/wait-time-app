@@ -1,15 +1,13 @@
-const baseUrl = 'https://wait-time-rails-api.herokuapp.com/api/v1'
-
 export class AuthAdapter {
   static login(loginParams){
-    return fetch(`${baseUrl}/auth`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/auth`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify(loginParams)
     }).then(res => res.json() )
   }
   static currentUser(){
-    return fetch(`${baseUrl}/current_user`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/current_user`, {
         headers: headers(),
     }).then(res => res.json() )
   }  
@@ -18,7 +16,7 @@ export class AuthAdapter {
 
 export class UserAdapter {
   static userData(userParams){
-    return fetch(`${baseUrl}/user_data`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/user_data`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify(userParams)
@@ -26,7 +24,7 @@ export class UserAdapter {
   }
 
   static createUser(username, password){
-    return fetch(`${baseUrl}/create_user`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/create_user`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -43,14 +41,14 @@ export class UserAdapter {
 
 export class WaitTimesAdapter  {
   static all(){
-    return fetch(`${baseUrl}/wait_times`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/wait_times`, {
       headers: headers()
     })
       .then( res => res.json() )
   }
 
   static create(waitTime, selectedStore, user_id){
-    return fetch(`${baseUrl}/wait_times`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/wait_times`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -68,12 +66,12 @@ export class WaitTimesAdapter  {
 
 export class StoresAdapter  {
   static all(){
-    return fetch(`${baseUrl}/all`)
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/all`)
       .then(response => response.json() )
   }
 
   static show(id){
-    return fetch(`${baseUrl}/show`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/show`, {
         method: 'POST',
         headers: headers(),
         body: JSON.stringify({
@@ -85,7 +83,7 @@ export class StoresAdapter  {
       .then(response => response.json() )
   }
   static getLocalStores(lat, lng){
-    return fetch(`${baseUrl}/searchStores`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/searchStores`, {
         method: 'POST',
         headers: headers(),
         body: JSON.stringify({
@@ -99,7 +97,7 @@ export class StoresAdapter  {
   }
 
   static wideSearch(lat, lng){
-    return fetch(`${baseUrl}/wideSearchStores`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/wideSearchStores`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -113,7 +111,7 @@ export class StoresAdapter  {
   }
 
   static createStore(storeName, address, company){
-    return fetch(`${baseUrl}/createStore`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/createStore`, {
       method: 'POST',
       headers: headers(),
       body: JSON.stringify({
@@ -132,7 +130,7 @@ export class FeedbackAdapter  {
   
 
   static create(feedback, store_id, user_id, wait_time){
-    return fetch(`${baseUrl}/create_feedback`, {
+    return fetch(`https://wait-time-rails-api.herokuapp.com/api/v1/create_feedback`, {
         method: 'POST',
         headers: headers(),
         body: JSON.stringify({

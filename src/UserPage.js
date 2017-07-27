@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {UserAdapter} from './adapters/'
 import Chart from './Chart'
 import LoadingScreen from './LoadingScreen'
 import { withRouter } from 'react-router-dom'
