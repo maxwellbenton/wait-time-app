@@ -23,6 +23,7 @@ export default class Map extends Component {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   componentWillMount() {
     if(this.props.curState.latitude === null) {
       this.props.getUserLocation()
@@ -35,6 +36,8 @@ export default class Map extends Component {
     })
   }
 
+=======
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
@@ -67,9 +70,12 @@ export default class Map extends Component {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(this.props.nearbyStores)
     //this.checkForDuplicateLocations()
 =======
+=======
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
@@ -84,6 +90,9 @@ export default class Map extends Component {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 95d5ea9... fixed up CSS more
+=======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
 >>>>>>> parent of 95d5ea9... fixed up CSS more

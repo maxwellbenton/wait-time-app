@@ -204,6 +204,7 @@ body, html {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   height: 92vh;
   padding: 1em;
 =======
@@ -217,6 +218,11 @@ body, html {
 =======
 =======
 =======
+=======
+}
+.user-image {
+  border-radius: 50%;
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 }
 .user-image {
   border-radius: 50%;
@@ -240,7 +246,11 @@ body, html {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   height: 92vh;
+=======
+  height: 600px;
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
   height: 600px;
 >>>>>>> parent of 95d5ea9... fixed up CSS more
