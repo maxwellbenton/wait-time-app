@@ -136,10 +136,6 @@ class App extends Component {
     if(localStorage.getItem('user_id') === undefined) {
       this.props.history.push('/login')
     } else {
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
       AuthAdapter.currentUser(localStorage.getItem("user_id"))
       .then(user => {
         this.setState({
