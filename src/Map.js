@@ -37,7 +37,10 @@ export default class Map extends Component {
             />
     })
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 95d5ea9... fixed up CSS more
 =======
 >>>>>>> parent of 95d5ea9... fixed up CSS more
     console.log(markers)

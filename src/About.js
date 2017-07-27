@@ -9,13 +9,6 @@ export default function About(){
 
         <div>
           <p>Wait Time is a user-driven app designed to provide useful feedback to customers and retail companies about the length of checkout lines.  The app allows for customers to time how long it takes to be served and to also provide immediate one-line feedback about the experience.  A user can view estimated and average wait times for a store, and see how their wait time stacks up against the norm (and if another store is typically faster).</p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
 
           <p>In addition, the app includes map functionality that will allow a user to get a snapshot of estimated wait times in nearby stores.  Users will also be able to view specific store statistics.</p>
 
