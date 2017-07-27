@@ -36,13 +36,6 @@ export default class Map extends Component {
               lng={store.longitude}
             />
     })
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
-=======
->>>>>>> parent of 95d5ea9... fixed up CSS more
     console.log(markers)
     console.log(this.props.curState)
     if(this.props.curState.latitude === null) {
